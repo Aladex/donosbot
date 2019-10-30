@@ -43,10 +43,8 @@ func main() {
 		if strings.Contains(update.Message.Text, "/donos") {
 			go donos.SendDonosMessage(bot, update)
 		} else if strings.Contains(update.Message.Text, "/help") {
-			msg := tgbotapi.NewMessage(update.Message.Chat.ID, `Напишите <code>/donos Текст доноса</code>
+			go donos.SendCustomMessage(bot, update, `Напишите <code>/donos Текст доноса</code>
 Дежурный сотрудник рассмотрит ваше обращение в ближайшее время. Спасибо.`)
-			msg.ParseMode = "HTML"
-			bot.Send(msg)
 		}
 	}
 }

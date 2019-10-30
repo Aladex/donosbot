@@ -54,3 +54,9 @@ func SendDonosMessage(b *tgbotapi.BotAPI, m tgbotapi.Update) {
 	SendTyping(b, m, s)
 	SendSticker(b, m)
 }
+
+func SendCustomMessage(b *tgbotapi.BotAPI, m tgbotapi.Update, t string) {
+	msg := tgbotapi.NewMessage(m.Message.Chat.ID, t)
+	msg.ParseMode = "HTML"
+	b.Send(msg)
+}
