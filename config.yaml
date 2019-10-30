@@ -1,0 +1,4 @@
+bot:
+  telegramAPIKey: "your-bot-key"
+  botListenDomain: "https://your-domain.con/"
+  botListenAndServe: ":3330"
